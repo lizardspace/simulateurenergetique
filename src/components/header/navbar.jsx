@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const menuItems = [
     { title: "Accueil", href: "/fideojoycomponent" },
-    { title: "Jeunes 12-17 Ans", href: "/jeunes-12-17-ans" },
+    { title: "StepProgress", href: "/stepprogress" },
     { title: "+18 Ans & Au Pair", href: "/plus-18-ans-au-pair" },
     { title: "Familles", href: "/familles" },
     { title: "Adultes & Pros", href: "/adultes-pros" },
