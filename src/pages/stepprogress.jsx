@@ -9,12 +9,16 @@ import {
   Heading,
   Progress,
 } from '@chakra-ui/react';
+import FormComponent1 from './../components/stepprogress/FormComponent1'; // Assuming FormComponent1 is in the same directory
+
+// ... (Other Steps code)
 
 function StepOne({ onNext, formData, setFormData }) {
   return (
     <FormControl>
       <FormLabel>Your need</FormLabel>
-      {/* Add your form fields here */}
+      {/* Include FormComponent1 here and pass formData and setFormData */}
+      <FormComponent1 formData={formData} setFormData={setFormData} />
       <Button onClick={onNext}>Next</Button>
     </FormControl>
   );
