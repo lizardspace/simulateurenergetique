@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Box,
+  Flex,
   Checkbox,
   CheckboxGroup,
   Stack,
@@ -42,7 +42,7 @@ function FormComponent4({ formData, setFormData }) {
       'Isolation des toitures terrasses',
       'Isolation d’un plancher bas',
     ],
-    heating: [
+    chauffage: [
       'Chaudière bois à alimentation automatique (granulés, plaquettes)',
       'Chaudière bois à alimentation manuelle (bûches)',
       'Chauffe-eau solaire individuel en Métropole (et dispositifs solaires pour le chauffage de l’eau)',
@@ -65,7 +65,7 @@ function FormComponent4({ formData, setFormData }) {
     regulation: [
       'Régulation par programmation horaire pièce par pièce'
     ],
-    productionOptimization: [
+    optimisation: [
       // Add production and optimization options here
     ],
   };
@@ -74,12 +74,15 @@ function FormComponent4({ formData, setFormData }) {
     <VStack spacing={4} as="form">
       {Object.entries(categories).map(([category, options]) => (
         <FormControl key={category}>
-          <FormLabel>{category}</FormLabel>
-          <IconButton
-            aria-label={`Toggle ${category}`}
-            icon={expandedCategory === category ? <ChevronUpIcon /> : <ChevronDownIcon />}
-            onClick={() => toggleDetails(category)}
-          />
+          <Flex justify="space-between" align="center">
+            <FormLabel>{category}</FormLabel>
+            <IconButton
+              aria-label={`Toggle ${category}`}
+              icon={expandedCategory === category ? <ChevronUpIcon /> : <ChevronDownIcon />}
+              onClick={() => toggleDetails(category)}
+              variant="ghost"
+            />
+          </Flex>
           <Collapse in={expandedCategory === category} animateOpacity>
             <CheckboxGroup
               colorScheme="blue"
