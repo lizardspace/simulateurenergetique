@@ -9,7 +9,8 @@ import {
   Heading,
   Progress,
 } from '@chakra-ui/react';
-import FormComponent1 from './../components/stepprogress/FormComponent1'; // Assuming FormComponent1 is in the same directory
+import FormComponent1 from './../components/stepprogress/FormComponent1'; 
+import FormComponent2 from './../components/stepprogress/FormComponent2';
 
 // ... (Other Steps code)
 
@@ -27,10 +28,10 @@ function StepOne({ onNext, formData, setFormData }) {
 function StepTwo({ onPrev, onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Your housing</FormLabel>
-      {/* Add your form fields here */}
-      <Button onClick={onPrev}>Previous</Button>
-      <Button onClick={onNext}>Next</Button>
+      <FormLabel>Votre logement</FormLabel>
+      <FormComponent2 formData={formData} setFormData={setFormData} />
+      <Button onClick={onPrev}>Précédent</Button>
+      <Button onClick={onNext}>Suivant</Button>
     </FormControl>
   );
 }
