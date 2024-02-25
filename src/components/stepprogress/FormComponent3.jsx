@@ -17,6 +17,7 @@ function FormComponent3({ formData, setFormData }) {
   const handlePrimaryResidencePostalChange = (e) => setFormData({ ...formData, primaryResidencePostal: e.target.value });
 
   return (
+    <Box textAlign="center">
     <VStack spacing={4} as="form">
       <FormControl isRequired>
         <FormLabel>Revenu fiscal de référence du foyer : *</FormLabel>
@@ -51,6 +52,7 @@ function FormComponent3({ formData, setFormData }) {
         <FormHelperText>Veuillez choisir une ville dans la liste.</FormHelperText>
       </FormControl>
     </VStack>
+    </Box>
   );
 }
 

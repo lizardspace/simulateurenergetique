@@ -4,7 +4,7 @@ import {
   Checkbox,
   CheckboxGroup,
   Stack,
-  Button,
+  Box,
   Collapse,
   FormControl,
   FormLabel,
@@ -71,6 +71,7 @@ function FormComponent4({ formData, setFormData }) {
   };
 
   return (
+    <Box textAlign="center">
     <VStack spacing={4} as="form">
       {Object.entries(categories).map(([category, options]) => (
         <FormControl key={category}>
@@ -102,6 +103,7 @@ function FormComponent4({ formData, setFormData }) {
       ))}
       {/* Rest of the component */}
     </VStack>
+    </Box>
   );
 }
 

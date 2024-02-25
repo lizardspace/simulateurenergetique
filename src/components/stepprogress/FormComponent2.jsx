@@ -17,6 +17,7 @@ function FormComponent2({ formData, setFormData }) {
   const handlePostalCodeChange = (e) => setFormData({ ...formData, postalCode: e.target.value });
 
   return (
+    <Box textAlign="center">
     <VStack spacing={4} as="form">
       <FormControl isRequired>
         <FormLabel>Quel est le type du logement à rénover ? *</FormLabel>
@@ -49,6 +50,7 @@ function FormComponent2({ formData, setFormData }) {
         <FormHelperText>Saisissez une ville ou un code postal. Format attendu : 75001 ou Paris</FormHelperText>
       </FormControl>
     </VStack>
+    </Box>
   );
 }
 

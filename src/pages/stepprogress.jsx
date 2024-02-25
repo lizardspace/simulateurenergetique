@@ -18,9 +18,8 @@ import FormComponent4 from './../components/stepprogress/FormComponent4';
 
 function StepOne({ onNext, formData, setFormData }) {
   return (
-    <FormControl>
-      <FormLabel>Vos besoins</FormLabel>
-      {/* Include FormComponent1 here and pass formData and setFormData */}
+    <FormControl textAlign="center">
+      <FormLabel textAlign="center">Vos besoins</FormLabel>
       <FormComponent1 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
       <Spacer /> 
@@ -33,7 +32,7 @@ function StepOne({ onNext, formData, setFormData }) {
 function StepTwo({ onPrev, onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Votre logement</FormLabel>
+      <FormLabel textAlign="center">Votre logement</FormLabel>
       <FormComponent2 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
         <Button onClick={onPrev}>Précédent</Button>
@@ -46,7 +45,7 @@ function StepTwo({ onPrev, onNext, formData, setFormData }) {
 function StepThree({ onPrev, onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Votre situation</FormLabel>
+      <FormLabel textAlign="center">Votre situation</FormLabel>
       <FormComponent3 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
       <Button onClick={onPrev}>Précédent</Button>
@@ -59,7 +58,7 @@ function StepThree({ onPrev, onNext, formData, setFormData }) {
 function StepFour({ onPrev, onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Vos travaux</FormLabel>
+      <FormLabel textAlign="center">Vos travaux</FormLabel>
       <FormComponent4 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
       <Button onClick={onPrev}>Précédent</Button>
@@ -72,7 +71,7 @@ function StepFour({ onPrev, onNext, formData, setFormData }) {
 function StepFive({ onPrev, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Ci-dessous les aides auxquelles vous avez droit</FormLabel>
+      <FormLabel textAlign="center">Ci-dessous les aides auxquelles vous avez droit</FormLabel>
       {/* Display a summary of the formData for review */}
       <Flex justify="space-between">
         <Button onClick={onPrev}>Précédent</Button>

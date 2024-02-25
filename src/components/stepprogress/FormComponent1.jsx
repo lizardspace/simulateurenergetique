@@ -6,7 +6,6 @@ import {
   RadioGroup,
   Stack,
   Checkbox,
-  Button,
   Text,
   useRadioGroup,
 } from '@chakra-ui/react';
