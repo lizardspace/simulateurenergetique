@@ -8,6 +8,7 @@ import {
   Heading,
   Progress,
   Stack,
+  Spacer,
 } from '@chakra-ui/react';
 import FormComponent1 from './../components/stepprogress/FormComponent1'; 
 import FormComponent2 from './../components/stepprogress/FormComponent2';
@@ -22,7 +23,7 @@ function StepOne({ onNext, formData, setFormData }) {
       {/* Include FormComponent1 here and pass formData and setFormData */}
       <FormComponent1 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
-      <Button></Button>
+      <Spacer /> 
       <Button onClick={onNext}>Suivant</Button>
       </Flex>
     </FormControl>
