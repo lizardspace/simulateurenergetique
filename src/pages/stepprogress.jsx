@@ -11,8 +11,9 @@ import {
 } from '@chakra-ui/react';
 import FormComponent1 from './../components/stepprogress/FormComponent1'; 
 import FormComponent2 from './../components/stepprogress/FormComponent2';
+import FormComponent3 from './../components/stepprogress/FormComponent3';
+import FormComponent4 from './../components/stepprogress/FormComponent4';
 
-// ... (Other Steps code)
 
 function StepOne({ onNext, formData, setFormData }) {
   return (
@@ -39,10 +40,10 @@ function StepTwo({ onPrev, onNext, formData, setFormData }) {
 function StepThree({ onPrev, onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Your budget</FormLabel>
-      {/* Add your form fields here */}
-      <Button onClick={onPrev}>Previous</Button>
-      <Button onClick={onNext}>Next</Button>
+      <FormLabel>Votre situation</FormLabel>
+      <FormComponent3 formData={formData} setFormData={setFormData} />
+      <Button onClick={onPrev}>Précédent</Button>
+      <Button onClick={onNext}>Suivant</Button>
     </FormControl>
   );
 }
@@ -50,10 +51,10 @@ function StepThree({ onPrev, onNext, formData, setFormData }) {
 function StepFour({ onPrev, onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Your preferences</FormLabel>
-      {/* Add your form fields here */}
-      <Button onClick={onPrev}>Previous</Button>
-      <Button onClick={onNext}>Next</Button>
+      <FormLabel>Vos travaux</FormLabel>
+      <FormComponent4 formData={formData} setFormData={setFormData} />
+      <Button onClick={onPrev}>Précédent</Button>
+      <Button onClick={onNext}>Suivant</Button>
     </FormControl>
   );
 }
