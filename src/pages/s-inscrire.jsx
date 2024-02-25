@@ -115,19 +115,19 @@ import {
 </FormControl>
 
 <FormControl id="partners-offers">
-  <Checkbox>J'accepte de recevoir des offres de la part des partenaires de Fideojoy</Checkbox>
+  <Checkbox>J'accepte de recevoir des offres de la part des partenaires de holistic</Checkbox>
 </FormControl>
 
 <Box display="none">
   <Input placeholder="If you are a human, ignore this field" />
 </Box>
 <FormControl id="actions" isRequired>
-          <Checkbox>Être jeune Au Pair dans une famille</Checkbox>
+          <Checkbox>Vouloir un devis</Checkbox>
         </FormControl>
   
         <FormControl id="terms" isRequired>
           <Checkbox>
-            J'accepte la charte de déontologie, les conditions générales d'utilisation et j'atteste sur l'honneur être majeur
+            J'accepte les conditions générales d'utilisation 
           </Checkbox>
         </FormControl>
   
