@@ -17,13 +17,7 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { title: "Accueil", href: "/fideojoycomponent" },
-    { title: "StepProgress", href: "/stepprogress" },
-    { title: "+18 Ans & Au Pair", href: "/plus-18-ans-au-pair" },
-    { title: "Familles", href: "/familles" },
-    { title: "Adultes & Pros", href: "/adultes-pros" },
-    { title: "FAQ", href: "/faq" },
-    { title: "Blog", href: "/blog" },
+    { title: "Simulateur", href: "/stepprogress" },
   ];
 
   return (
