@@ -18,10 +18,10 @@ import FormComponent4 from './../components/stepprogress/FormComponent4';
 function StepOne({ onNext, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Your need</FormLabel>
+      <FormLabel>Vos besoins</FormLabel>
       {/* Include FormComponent1 here and pass formData and setFormData */}
       <FormComponent1 formData={formData} setFormData={setFormData} />
-      <Button onClick={onNext}>Next</Button>
+      <Button onClick={onNext}>Suivant</Button>
     </FormControl>
   );
 }
@@ -62,16 +62,16 @@ function StepFour({ onPrev, onNext, formData, setFormData }) {
 function StepFive({ onPrev, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Review & Submit</FormLabel>
+      <FormLabel>Ci-dessous les aides auquelles vous avez droit</FormLabel>
       {/* Display a summary of the formData for review */}
-      <Button onClick={onPrev}>Previous</Button>
+      <Button onClick={onPrev}>Précédent</Button>
       <Button
         onClick={() => {
           // Submit formData logic
           console.log(formData);
         }}
       >
-        Submit
+        Soumettre
       </Button>
     </FormControl>
   );
@@ -112,7 +112,7 @@ const [formData, setFormData] = useState({
   return (
     <Box>
       <Progress value={(currentStep / 5) * 100} />
-      <Heading as="h3" size="lg">Find the help suited to your needs</Heading>
+      <Heading as="h3" size="lg">Trouvez les aides adaptées à votre besoin</Heading>
       <Stack spacing={4}>
         {renderStep()}
       </Stack>

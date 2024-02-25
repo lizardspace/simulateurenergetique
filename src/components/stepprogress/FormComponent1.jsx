@@ -60,8 +60,6 @@ function FormComponent1({ formData, setFormData }) {
           <Checkbox isChecked={acceptDataCollection} onChange={handleDataCollectionChange}>
             J'accepte la collecte de mes données à des fins d'amélioration du service.
           </Checkbox>
-    
-          <Button colorScheme="blue">Suivant</Button>
         </VStack>
       );
     }
