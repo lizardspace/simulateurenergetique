@@ -3,7 +3,7 @@ import { Box, Heading, Text, Divider, VStack } from "@chakra-ui/react";
 const FideojoyComponent = () => {
   return (
     <Box
-      backgroundImage="url('https://i.postimg.cc/BZycYmLF/cathedral-1066314-1280.jpg')"
+      backgroundImage="url('https://i.postimg.cc/tRkjLpxz/holistic.png')"
       backgroundSize="cover"
       backgroundPosition="center"
       py={12}
@@ -11,10 +11,10 @@ const FideojoyComponent = () => {
     >
       <VStack spacing={8} align="start" color="white">
         <Heading as="h1" size="xl" textAlign="center">
-          FIDEOJOY : RÉSEAU CATHOLIQUE D'AU PAIR ET D'ÉCHANGES LINGUISTIQUES
+          Tester notre simulateur
         </Heading>
         <Text fontSize="lg" textAlign="center">
-          FIDEOJOY met en relation des familles chrétiennes et des Au Pair pour proposer, dans un esprit familial et chrétien : des échanges et des séjours linguistiques aux jeunes de 12 à 17 ans, des expériences Au Pair aux jeunes de 18 ans et +
+          Aller à simulateur
         </Text>
       </VStack>
 
@@ -28,10 +28,10 @@ const FideojoyComponent = () => {
           NOTRE MISSION
         </Heading>
         <Text fontSize="md">
-          Cette expérience internationale chrétienne permet aux participants de : perfectionner une langue, s'ouvrir à une autre culture, découvrir la Foi loin de chez soi
+          Le meilleur simulateur
         </Text>
         <Text fontSize="md">
-          « Famille, vis la joie de la Foi » Pape François, rencontre des familles à Rome le 26 octobre 2018
+          
         </Text>
       </VStack>
 
