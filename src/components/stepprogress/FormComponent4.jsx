@@ -63,7 +63,7 @@ function FormComponent4({ formData, setFormData }) {
       'Ventilation simple flux',
     ],
     regulation: [
-      // Add regulation options here
+      'Régulation par programmation horaire pièce par pièce'
     ],
     productionOptimization: [
       // Add production and optimization options here
