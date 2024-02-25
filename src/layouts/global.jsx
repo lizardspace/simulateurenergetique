@@ -8,7 +8,8 @@ const Layout = ({ children }) => (
     <Flex justifyContent="center"> {/* Center horizontally */}
       <Box
         as="main"
-        my="10px" // Add margin/padding
+        my="10px" 
+        m="5px"
       >
         {children}
       </Box>
