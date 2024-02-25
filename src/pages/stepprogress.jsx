@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Button,
-  RadioGroup,
-  Radio,
   FormControl,
   FormLabel,
   Input,
@@ -12,33 +10,67 @@ import {
   Progress,
 } from '@chakra-ui/react';
 
-// Create a component for each step in the form
 function StepOne({ onNext, formData, setFormData }) {
-  // Step one form fields
   return (
     <FormControl>
       <FormLabel>Your need</FormLabel>
-      {/* Radio buttons and other inputs */}
+      {/* Add your form fields here */}
       <Button onClick={onNext}>Next</Button>
     </FormControl>
   );
 }
 
 function StepTwo({ onPrev, onNext, formData, setFormData }) {
-  // Step two form fields
   return (
     <FormControl>
       <FormLabel>Your housing</FormLabel>
-      {/* Radio buttons and other inputs */}
+      {/* Add your form fields here */}
       <Button onClick={onPrev}>Previous</Button>
       <Button onClick={onNext}>Next</Button>
     </FormControl>
   );
 }
 
-// Repeat for the rest of the steps...
+function StepThree({ onPrev, onNext, formData, setFormData }) {
+  return (
+    <FormControl>
+      <FormLabel>Your budget</FormLabel>
+      {/* Add your form fields here */}
+      <Button onClick={onPrev}>Previous</Button>
+      <Button onClick={onNext}>Next</Button>
+    </FormControl>
+  );
+}
 
-// Main form component that manages the steps
+function StepFour({ onPrev, onNext, formData, setFormData }) {
+  return (
+    <FormControl>
+      <FormLabel>Your preferences</FormLabel>
+      {/* Add your form fields here */}
+      <Button onClick={onPrev}>Previous</Button>
+      <Button onClick={onNext}>Next</Button>
+    </FormControl>
+  );
+}
+
+function StepFive({ onPrev, formData, setFormData }) {
+  return (
+    <FormControl>
+      <FormLabel>Review & Submit</FormLabel>
+      {/* Display a summary of the formData for review */}
+      <Button onClick={onPrev}>Previous</Button>
+      <Button
+        onClick={() => {
+          // Submit formData logic
+          console.log(formData);
+        }}
+      >
+        Submit
+      </Button>
+    </FormControl>
+  );
+}
+
 function MultiStepForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({});
@@ -46,14 +78,18 @@ function MultiStepForm() {
   const nextStep = () => setCurrentStep((prev) => prev + 1);
   const prevStep = () => setCurrentStep((prev) => prev - 1);
 
-  // Render the current step component based on currentStep state
   const renderStep = () => {
     switch (currentStep) {
       case 1:
         return <StepOne onNext={nextStep} formData={formData} setFormData={setFormData} />;
       case 2:
         return <StepTwo onPrev={prevStep} onNext={nextStep} formData={formData} setFormData={setFormData} />;
-      // Repeat for the rest of the steps...
+      case 3:
+        return <StepThree onPrev={prevStep} onNext={nextStep} formData={formData} setFormData={setFormData} />;
+      case 4:
+        return <StepFour onPrev={prevStep} onNext={nextStep} formData={formData} setFormData={setFormData} />;
+      case 5:
+        return <StepFive onPrev={prevStep} formData={formData} setFormData={setFormData} />;
       default:
         return <StepOne onNext={nextStep} formData={formData} setFormData={setFormData} />;
     }
@@ -70,4 +106,4 @@ function MultiStepForm() {
   );
 }
 
-export default MultiStepForm;
+export default MultiStepForm
