@@ -22,8 +22,8 @@ function StepOne({ onNext, formData, setFormData }) {
       <FormLabel textAlign="center">Vos besoins</FormLabel>
       <FormComponent1 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
-      <Spacer /> 
-      <Button onClick={onNext}>Suivant</Button>
+        <Spacer /> 
+        <Button colorScheme="blue" onClick={onNext}>Suivant</Button> {/* Blue button */}
       </Flex>
     </FormControl>
   );
@@ -35,8 +35,8 @@ function StepTwo({ onPrev, onNext, formData, setFormData }) {
       <FormLabel textAlign="center">Votre logement</FormLabel>
       <FormComponent2 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
-        <Button onClick={onPrev}>Précédent</Button>
-        <Button onClick={onNext}>Suivant</Button>
+        <Button colorScheme="blue" onClick={onPrev}>Précédent</Button> {/* Blue button */}
+        <Button colorScheme="blue" onClick={onNext}>Suivant</Button> {/* Blue button */}
       </Flex>
     </FormControl>
   );
@@ -48,8 +48,8 @@ function StepThree({ onPrev, onNext, formData, setFormData }) {
       <FormLabel textAlign="center">Votre situation</FormLabel>
       <FormComponent3 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
-      <Button onClick={onPrev}>Précédent</Button>
-      <Button onClick={onNext}>Suivant</Button>
+        <Button colorScheme="blue" onClick={onPrev}>Précédent</Button> {/* Blue button */}
+        <Button colorScheme="blue" onClick={onNext}>Suivant</Button> {/* Blue button */}
       </Flex>
     </FormControl>
   );
@@ -61,8 +61,8 @@ function StepFour({ onPrev, onNext, formData, setFormData }) {
       <FormLabel textAlign="center">Vos travaux</FormLabel>
       <FormComponent4 formData={formData} setFormData={setFormData} />
       <Flex justify="space-between">
-      <Button onClick={onPrev}>Précédent</Button>
-      <Button onClick={onNext}>Suivant</Button>
+        <Button colorScheme="blue" onClick={onPrev}>Précédent</Button> {/* Blue button */}
+        <Button colorScheme="blue" onClick={onNext}>Suivant</Button> {/* Blue button */}
       </Flex>
     </FormControl>
   );
@@ -71,34 +71,27 @@ function StepFour({ onPrev, onNext, formData, setFormData }) {
 function StepFive({ onPrev, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel textAlign="center">Ci-dessous les aides auxquelles vous avez droit</FormLabel>
+      <FormLabel>Ci-dessous les aides auxquelles vous avez droit</FormLabel>
       {/* Display a summary of the formData for review */}
       <Flex justify="space-between">
-        <Button onClick={onPrev}>Précédent</Button>
-        <Button
-          onClick={() => {
-            // Submit formData logic
-            console.log(formData);
-          }}
-        >
-          Soumettre
-        </Button>
+        <Button colorScheme="blue" onClick={onPrev}>Précédent</Button> {/* Blue button */}
+        <Button colorScheme="blue" onClick={() => {console.log(formData);}}>Soumettre</Button> {/* Blue button */}
       </Flex>
     </FormControl>
   );
 }
 
 function MultiStepForm() {
-const [currentStep, setCurrentStep] = useState(1);
-const [formData, setFormData] = useState({
-  // ... other formData properties
-  selectedWorks: {
-    isolation: [], // Initialize this with empty arrays or preselected values
-    heating: [],
-    ventilation: [],
-    // ... other categories
-  },
-});
+  const [currentStep, setCurrentStep] = useState(1);
+  const [formData, setFormData] = useState({
+    // ... other formData properties
+    selectedWorks: {
+      isolation: [], // Initialize this with empty arrays or preselected values
+      heating: [],
+      ventilation: [],
+      // ... other categories
+    },
+  });
 
   const nextStep = () => setCurrentStep((prev) => prev + 1);
   const prevStep = () => setCurrentStep((prev) => prev - 1);
