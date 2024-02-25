@@ -16,7 +16,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 function FormComponent4({ formData, setFormData }) {
   const [showDetails, setShowDetails] = React.useState({});
 
-  const handleWorkSelectionChange = (category) => (value) => {
+const handleWorkSelectionChange = (category) => (value) => {
     setFormData({
       ...formData,
       selectedWorks: {
@@ -25,7 +25,7 @@ function FormComponent4({ formData, setFormData }) {
       },
     });
   };
-
+  
   const toggleDetails = (category) => {
     setShowDetails({
       ...showDetails,
@@ -50,35 +50,36 @@ function FormComponent4({ formData, setFormData }) {
 
   return (
     <VStack spacing={4} as="form">
-      {Object.entries(categories).map(([category, options]) => (
-        <FormControl key={category}>
-          <FormLabel>{category}</FormLabel>
-          <IconButton
-            aria-label={`Toggle ${category}`}
+  {Object.entries(categories).map(([category, options]) => (
+    <FormControl key={category}>
+      <FormLabel>{category}</FormLabel>
+      <IconButton
+        aria-label={`Toggle ${category}`}
             icon={showDetails[category] ? <ChevronUpIcon /> : <ChevronDownIcon />}
             onClick={() => toggleDetails(category)}
-          />
-          <Collapse in={showDetails[category]} animateOpacity>
-            <CheckboxGroup
-              colorScheme="blue"
-              defaultValue={formData.selectedWorks[category]}
-              onChange={handleWorkSelectionChange(category)}
-            >
-              <Stack pl={6} mt={1} spacing={1}>
+      />
+      <Collapse in={showDetails[category]} animateOpacity>
+        <CheckboxGroup
+          colorScheme="blue"
+          defaultValue={formData.selectedWorks[category] || []} // Provide an empty array as a fallback
+          onChange={handleWorkSelectionChange(category)}
+        >
+          <Stack pl={6} mt={1} spacing={1}>
                 {options.map((option) => (
                   <Checkbox key={option} value={option}>
                     {option}
                   </Checkbox>
                 ))}
               </Stack>
-            </CheckboxGroup>
-          </Collapse>
-        </FormControl>
-      ))}
-      {/* ... */}
+        </CheckboxGroup>
+      </Collapse>
+    </FormControl>
+  ))}
+{/* ... */}
       {/* A button or any control to handle the form submission */}
     </VStack>
   );
 }
 
 export default FormComponent4;
+  

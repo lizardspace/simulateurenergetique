@@ -78,8 +78,16 @@ function StepFive({ onPrev, formData, setFormData }) {
 }
 
 function MultiStepForm() {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState({});
+const [currentStep, setCurrentStep] = useState(1);
+const [formData, setFormData] = useState({
+  // ... other formData properties
+  selectedWorks: {
+    isolation: [], // Initialize this with empty arrays or preselected values
+    heating: [],
+    ventilation: [],
+    // ... other categories
+  },
+});
 
   const nextStep = () => setCurrentStep((prev) => prev + 1);
   const prevStep = () => setCurrentStep((prev) => prev - 1);
