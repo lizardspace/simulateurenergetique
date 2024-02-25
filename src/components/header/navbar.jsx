@@ -88,17 +88,6 @@ const Navbar = () => {
             S'INSCRIRE
           </Button>
         </NextLink>
-        <Menu>
-          <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant="ghost" mr={2}>
-            LANGUE
-          </MenuButton>
-          <MenuList>
-            {/* Add MenuItems for each language */}
-            <MenuItem onClick={closeMenu}>Français</MenuItem>
-            <MenuItem onClick={closeMenu}>English</MenuItem>
-            {/* ... other languages */}
-          </MenuList>
-        </Menu>
 
       </Flex>
 
