@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import {
   Box,
   Button,
+  Flex,
   FormControl,
   FormLabel,
-  Input,
-  Stack,
   Heading,
   Progress,
+  Stack,
 } from '@chakra-ui/react';
 import FormComponent1 from './../components/stepprogress/FormComponent1'; 
 import FormComponent2 from './../components/stepprogress/FormComponent2';
@@ -21,7 +21,10 @@ function StepOne({ onNext, formData, setFormData }) {
       <FormLabel>Vos besoins</FormLabel>
       {/* Include FormComponent1 here and pass formData and setFormData */}
       <FormComponent1 formData={formData} setFormData={setFormData} />
+      <Flex justify="space-between">
+      <Button></Button>
       <Button onClick={onNext}>Suivant</Button>
+      </Flex>
     </FormControl>
   );
 }
@@ -31,8 +34,10 @@ function StepTwo({ onPrev, onNext, formData, setFormData }) {
     <FormControl>
       <FormLabel>Votre logement</FormLabel>
       <FormComponent2 formData={formData} setFormData={setFormData} />
-      <Button onClick={onPrev}>Précédent</Button>
-      <Button onClick={onNext}>Suivant</Button>
+      <Flex justify="space-between">
+        <Button onClick={onPrev}>Précédent</Button>
+        <Button onClick={onNext}>Suivant</Button>
+      </Flex>
     </FormControl>
   );
 }
@@ -42,8 +47,10 @@ function StepThree({ onPrev, onNext, formData, setFormData }) {
     <FormControl>
       <FormLabel>Votre situation</FormLabel>
       <FormComponent3 formData={formData} setFormData={setFormData} />
+      <Flex justify="space-between">
       <Button onClick={onPrev}>Précédent</Button>
       <Button onClick={onNext}>Suivant</Button>
+      </Flex>
     </FormControl>
   );
 }
@@ -53,8 +60,10 @@ function StepFour({ onPrev, onNext, formData, setFormData }) {
     <FormControl>
       <FormLabel>Vos travaux</FormLabel>
       <FormComponent4 formData={formData} setFormData={setFormData} />
+      <Flex justify="space-between">
       <Button onClick={onPrev}>Précédent</Button>
       <Button onClick={onNext}>Suivant</Button>
+      </Flex>
     </FormControl>
   );
 }
@@ -62,17 +71,19 @@ function StepFour({ onPrev, onNext, formData, setFormData }) {
 function StepFive({ onPrev, formData, setFormData }) {
   return (
     <FormControl>
-      <FormLabel>Ci-dessous les aides auquelles vous avez droit</FormLabel>
+      <FormLabel>Ci-dessous les aides auxquelles vous avez droit</FormLabel>
       {/* Display a summary of the formData for review */}
-      <Button onClick={onPrev}>Précédent</Button>
-      <Button
-        onClick={() => {
-          // Submit formData logic
-          console.log(formData);
-        }}
-      >
-        Soumettre
-      </Button>
+      <Flex justify="space-between">
+        <Button onClick={onPrev}>Précédent</Button>
+        <Button
+          onClick={() => {
+            // Submit formData logic
+            console.log(formData);
+          }}
+        >
+          Soumettre
+        </Button>
+      </Flex>
     </FormControl>
   );
 }
@@ -120,4 +131,4 @@ const [formData, setFormData] = useState({
   );
 }
 
-export default MultiStepForm
+export default MultiStepForm;
