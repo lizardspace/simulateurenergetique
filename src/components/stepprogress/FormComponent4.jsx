@@ -14,7 +14,8 @@ import {
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 
 function FormComponent4({ formData, setFormData }) {
-  const [showDetails, setShowDetails] = React.useState({});
+  // State to track the currently expanded category
+  const [expandedCategory, setExpandedCategory] = React.useState(null);
 
   const handleWorkSelectionChange = (category) => (value) => {
     setFormData({
@@ -27,12 +28,10 @@ function FormComponent4({ formData, setFormData }) {
   };
 
   const toggleDetails = (category) => {
-    setShowDetails({
-      ...showDetails,
-      [category]: !showDetails[category],
-    });
+    setExpandedCategory(expandedCategory !== category ? category : null);
   };
 
+  // Define your categories and options here
   const categories = {
     isolation: [
       'Isolation des combles perdus',
@@ -78,10 +77,10 @@ function FormComponent4({ formData, setFormData }) {
           <FormLabel>{category}</FormLabel>
           <IconButton
             aria-label={`Toggle ${category}`}
-            icon={showDetails[category] ? <ChevronUpIcon /> : <ChevronDownIcon />}
+            icon={expandedCategory === category ? <ChevronUpIcon /> : <ChevronDownIcon />}
             onClick={() => toggleDetails(category)}
           />
-          <Collapse in={showDetails[category]} animateOpacity>
+          <Collapse in={expandedCategory === category} animateOpacity>
             <CheckboxGroup
               colorScheme="blue"
               defaultValue={formData.selectedWorks[category] || []}
@@ -98,7 +97,7 @@ function FormComponent4({ formData, setFormData }) {
           </Collapse>
         </FormControl>
       ))}
-      <Button colorScheme="blue" mt={4}>Rechercher</Button>
+      {/* Rest of the component */}
     </VStack>
   );
 }
