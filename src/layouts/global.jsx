@@ -10,9 +10,7 @@ const Layout = ({ children }) => (
     <Flex justifyContent="center"> {/* Center horizontally */}
       <Box
         as="main"
-        px={[4, 6, 10, 14, 20]}
         maxW={MAX_WIDTH}
-        mx="auto"
         my="10px" // Add margin/padding
       >
         {children}
