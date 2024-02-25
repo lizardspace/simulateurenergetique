@@ -9,7 +9,6 @@ const Layout = ({ children }) => (
       <Box
         as="main"
         my="10px" // Add margin/padding
-        ml={[0, null, null, null, "20px"]} // Left margin on phone screens
       >
         {children}
       </Box>
